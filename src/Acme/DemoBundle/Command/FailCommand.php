@@ -15,27 +15,14 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @author Tobias Schultze <http://tobion.de>
  */
-class HelloWorldCommand extends Command
+class FailCommand extends Command
 {
     /**
      * {@inheritdoc}
      */
     protected function configure()
     {
-        $this
-            ->setName('acme:hello')
-            ->setDescription('Hello World example command')
-            ->addArgument('who', InputArgument::OPTIONAL, 'Who to greet.', 'World')
-            ->setHelp(<<<EOF
-The <info>%command.name%</info> command greets somebody or everybody:
-
-<info>php %command.full_name%</info>
-
-The optional argument specifies who to greet:
-
-<info>php %command.full_name%</info> Fabien
-EOF
-            );
+        $this->setName('acme:fail');
     }
 
     /**
@@ -43,6 +30,8 @@ EOF
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(sprintf('Hello <comment>%s</comment>!', $input->getArgument('who')));
+        file_put_contents('output.log', date('Y-m-d H:i:s') . ' FailCommand' . PHP_EOL, FILE_APPEND);
+        $output->writeln('Fail!');
+        return 1;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Acme\DemoBundle\Command;
 
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -15,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @author Tobias Schultze <http://tobion.de>
  */
-class RecoverCommand extends Command
+class RecoverCommand extends ContainerAwareCommand
 {
     /**
      * {@inheritdoc}
@@ -30,16 +31,18 @@ class RecoverCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if (file_exists('status.tmp')) {
-            $status = file_get_contents('status.tmp');
+        $folder = $this->getContainer()->getParameter('kernel.root_dir') . '/../';
+
+        if (file_exists($folder . 'status.tmp')) {
+            $status = file_get_contents($folder . 'status.tmp');
         } else {
             $status = 'done';
         }
 
         $status = $status == 'done' ? 'fail' : 'done';
 
-        file_put_contents('status.tmp', $status);
-        file_put_contents('output.log', date('Y-m-d H:i:s') . ' RecodeCommand: ' . $status . PHP_EOL, FILE_APPEND);
+        file_put_contents($folder . 'status.tmp', $status);
+        file_put_contents($folder . 'output.log', date('Y-m-d H:i:s') . ' RecodeCommand: ' . $status . PHP_EOL, FILE_APPEND);
         $output->writeln($status);
 
         return $status == 'done' ? 0 : 1;

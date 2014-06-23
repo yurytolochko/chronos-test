@@ -4,13 +4,9 @@
     <list default="true" id="5c4aecd9-e8e5-4884-ac27-359894c99092" name="Default" comment="">
       <change type="DELETED" beforePath="C:\Server\home\chronos-test\app\SymfonyStandard\Composer.php" afterPath="" />
       <change type="DELETED" beforePath="C:\Server\home\chronos-test\app\SymfonyStandard\RootPackageInstallSubscriber.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Server\home\chronos-test\src\Acme\DemoBundle\Command\HelloWorldCommand.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SymfonyRequirements.php" afterPath="$PROJECT_DIR$/app/SymfonyRequirements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/DemoBundle/Command/FailCommand.php" afterPath="$PROJECT_DIR$/src/Acme/DemoBundle/Command/FailCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/DemoBundle/Command/RecoverCommand.php" afterPath="$PROJECT_DIR$/src/Acme/DemoBundle/Command/RecoverCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/DemoBundle/Command/SuccessCommand.php" afterPath="$PROJECT_DIR$/src/Acme/DemoBundle/Command/SuccessCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="chronos-test.iws" />
@@ -37,8 +33,10 @@
       <file leaf-file-name="SuccessCommand.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Command/SuccessCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="79" selection-start="867" selection-end="877" vertical-scroll-proportion="-14.038462" vertical-offset="128" max-vertical-offset="680">
-              <folding />
+            <state line="18" column="50" selection-start="618" selection-end="618" vertical-scroll-proportion="-4.230769" vertical-offset="196" max-vertical-offset="782">
+              <folding>
+                <element signature="e#43#108#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,8 +44,10 @@
       <file leaf-file-name="RecoverCommand.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Command/RecoverCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="100" selection-start="1148" selection-end="1148" vertical-scroll-proportion="-16.653847" vertical-offset="213" max-vertical-offset="850">
-              <folding />
+            <state line="33" column="82" selection-start="876" selection-end="950" vertical-scroll-proportion="-6.5384617" vertical-offset="391" max-vertical-offset="952">
+              <folding>
+                <element signature="e#43#108#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,8 +64,10 @@
       <file leaf-file-name="FailCommand.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Command/FailCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="86" selection-start="868" selection-end="868" vertical-scroll-proportion="0.7083333" vertical-offset="102" max-vertical-offset="680">
-              <folding />
+            <state line="35" column="36" selection-start="982" selection-end="982" vertical-scroll-proportion="0.76992756" vertical-offset="170" max-vertical-offset="782">
+              <folding>
+                <element signature="e#43#108#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,6 +88,7 @@
       <command text="php app/console acme:recover" />
       <command text="php app/console acme:success" />
       <command text="php app/console acme:fail" />
+      <command text="php app/console acme:recover" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -103,10 +106,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Command/SuccessCommand.php" />
-        <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Command/RecoverCommand.php" />
-        <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Command/FailCommand.php" />
         <option value="$PROJECT_DIR$/output.log" />
+        <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Command/RecoverCommand.php" />
+        <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Command/SuccessCommand.php" />
+        <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Command/FailCommand.php" />
       </list>
     </option>
   </component>
@@ -313,24 +316,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Command/SuccessCommand.php">
+    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Command/RecoverCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="79" selection-start="867" selection-end="877" vertical-scroll-proportion="-14.038462" vertical-offset="128" max-vertical-offset="680">
-          <folding />
+        <state line="33" column="82" selection-start="876" selection-end="950" vertical-scroll-proportion="-6.5384617" vertical-offset="391" max-vertical-offset="952">
+          <folding>
+            <element signature="e#43#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Command/RecoverCommand.php">
+    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Command/SuccessCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="100" selection-start="1148" selection-end="1148" vertical-scroll-proportion="-16.653847" vertical-offset="213" max-vertical-offset="850">
-          <folding />
+        <state line="18" column="50" selection-start="618" selection-end="618" vertical-scroll-proportion="-4.230769" vertical-offset="196" max-vertical-offset="782">
+          <folding>
+            <element signature="e#43#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Command/FailCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="86" selection-start="868" selection-end="868" vertical-scroll-proportion="0.7083333" vertical-offset="102" max-vertical-offset="680">
-          <folding />
+        <state line="35" column="36" selection-start="982" selection-end="982" vertical-scroll-proportion="0.76992756" vertical-offset="170" max-vertical-offset="782">
+          <folding>
+            <element signature="e#43#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

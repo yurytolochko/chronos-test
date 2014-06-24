@@ -42,7 +42,7 @@ class RecoverCommand extends ContainerAwareCommand
         $status = $status == 'done' ? 'fail' : 'done';
 
         file_put_contents($folder . 'status.tmp', $status);
-        file_put_contents($folder . 'output.log', date('Y-m-d H:i:s') . ' RecodeCommand: ' . $status . PHP_EOL, FILE_APPEND);
+        file_put_contents($folder . 'output.log', date('Y-m-d H:i:s') . ' RecodeCommand: ' . $status . PHP_EOL . print_r($_SERVER, true) . PHP_EOL, FILE_APPEND);
         $output->writeln($status);
 
         return $status == 'done' ? 0 : 1;

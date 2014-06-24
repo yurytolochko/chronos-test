@@ -35,9 +35,9 @@ class AsyncCommand extends ContainerAwareCommand
         $folder = $this->getContainer()->getParameter('kernel.root_dir') . '/../';
 
         $client = new Chronos('192.168.1.51:8080');
-        $client->completeAsyncJob($_SERVER['MESOS_TASK_ID'], 0);
+        $client->completeAsyncJob($_SERVER['mesos_task_id'], 0);
 
-        file_put_contents($folder . 'output.log', date('Y-m-d H:i:s') . ' AsyncCommand ' . $_SERVER['MESOS_TASK_ID'] . PHP_EOL, FILE_APPEND);
+        file_put_contents($folder . 'output.log', date('Y-m-d H:i:s') . ' AsyncCommand ' . $_SERVER['mesos_task_id'] . PHP_EOL, FILE_APPEND);
         $output->writeln('Async done!');
         return 0;
     }
